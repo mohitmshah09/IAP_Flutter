@@ -1,5 +1,4 @@
 
-
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -222,9 +221,7 @@ class _MyAppState extends State<MyApp> {
               'This app needs special configuration to run. Please see example/README.md for instructions.')));
     }
 
-    // This loading previous purchases code is just a demo. Please do not use this as it is.
-    // In your app you should always verify the purchase data using the `verificationData` inside the [PurchaseDetails] object before trusting it.
-    // We recommend that you use your own server to verity the purchase data.
+    
     Map<String, PurchaseDetails> purchases =
         Map.fromEntries(_purchases.map((PurchaseDetails purchase) {
       if (purchase.pendingCompletePurchase) {
@@ -324,7 +321,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void deliverProduct(PurchaseDetails purchaseDetails) async {
-    // IMPORTANT!! Always verify a purchase purchase details before delivering the product.
+    
     if (purchaseDetails.productID == _kConsumableId) {
       await ConsumableStore.save(purchaseDetails.purchaseID);
       List<String> consumables = await ConsumableStore.load();
@@ -347,8 +344,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<bool> _verifyPurchase(PurchaseDetails purchaseDetails) {
-    // IMPORTANT!! Always verify a purchase before delivering the product.
-    // For the purpose of an example, we directly return true.
     return Future<bool>.value(true);
   }
 

@@ -1,12 +1,6 @@
-// Copyright 2019 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// This is just a development prototype for locally storing consumables. Do not
-// use this.
 class ConsumableStore {
   static const String _kPrefKey = 'consumables';
   static Future<void> _writes = Future.value();
